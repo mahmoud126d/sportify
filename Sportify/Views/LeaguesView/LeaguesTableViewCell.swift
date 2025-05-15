@@ -9,6 +9,10 @@ import UIKit
 
 class LeaguesTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var leagueNameLabel: UILabel!
+    
+    @IBOutlet weak var leagueImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

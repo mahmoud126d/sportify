@@ -7,14 +7,22 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
-    
+    @IBOutlet weak var sportsCollectionView: UICollectionView!
+    private let sports = ["Football","Tennis","Cricket",
+    "BasketBall"]
     override func viewDidLoad() {
         super.viewDidLoad()
         // Setup UI elements, connect outlets, and add actions here
+        let sportCellNib = UINib(nibName: "SportViewCell", bundle: nil)
+        sportsCollectionView.register(sportCellNib, forCellWithReuseIdentifier: "sportCell")
+        
 
-
+        self.sportsCollectionView.dataSource = self
+        self.sportsCollectionView.delegate = self
+        
+        sportsCollectionView.frame = view.bounds
     }
     
     override func loadView() {
@@ -31,12 +39,27 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
         
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return sports.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "sportCell", for: indexPath) as! SportViewCell
+        
+        cell.sportLabel.text = sports[indexPath.row]
+        cell.sportImageView.image = UIImage(named: sports[indexPath.row].lowercased())
+
+        return cell
     }
         
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let itemWidth : CGFloat = sportsCollectionView.frame.width / 2 - 8
+        let itemHeight : CGFloat = sportsCollectionView.frame.height / 2
+        return CGSize(width: itemWidth, height: itemHeight)
+    }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let leagueVc = LeaguesTableViewController()
+        navigationController?.pushViewController(leagueVc, animated: true)
+    }
+    
 }

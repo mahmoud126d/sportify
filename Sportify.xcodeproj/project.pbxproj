@@ -9,14 +9,22 @@
 /* Begin PBXBuildFile section */
 		22335DCB2DD4D2B50076422C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22335DCA2DD4D2B50076422C /* AppDelegate.swift */; };
 		22335DCD2DD4D2B50076422C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22335DCC2DD4D2B50076422C /* SceneDelegate.swift */; };
-		22335DCF2DD4D2B50076422C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22335DCE2DD4D2B50076422C /* ViewController.swift */; };
-		22335DD22DD4D2B50076422C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22335DD02DD4D2B50076422C /* Main.storyboard */; };
 		22335DD52DD4D2B50076422C /* Sportify.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22335DD32DD4D2B50076422C /* Sportify.xcdatamodeld */; };
 		22335DD72DD4D2B60076422C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22335DD62DD4D2B60076422C /* Assets.xcassets */; };
 		22335DDA2DD4D2B60076422C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22335DD82DD4D2B60076422C /* LaunchScreen.storyboard */; };
 		22335DE52DD4D2B60076422C /* SportifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22335DE42DD4D2B60076422C /* SportifyTests.swift */; };
 		22335DEF2DD4D2B60076422C /* SportifyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22335DEE2DD4D2B60076422C /* SportifyUITests.swift */; };
 		22335DF12DD4D2B60076422C /* SportifyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22335DF02DD4D2B60076422C /* SportifyUITestsLaunchTests.swift */; };
+		22AAA0ED2DD52EBD0092F713 /* LeaguesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AAA0EB2DD52EBD0092F713 /* LeaguesTableViewController.swift */; };
+		22AAA0EE2DD52EBD0092F713 /* LeaguesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22AAA0EC2DD52EBD0092F713 /* LeaguesTableViewController.xib */; };
+		22AAA0F12DD52F100092F713 /* LeaguesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AAA0EF2DD52F100092F713 /* LeaguesTableViewCell.swift */; };
+		22AAA0F22DD52F100092F713 /* LeaguesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22AAA0F02DD52F100092F713 /* LeaguesTableViewCell.xib */; };
+		22F7A78D2DD5011200A6B05A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7A78B2DD5011200A6B05A /* HomeViewController.swift */; };
+		22F7A78E2DD5011200A6B05A /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F7A78C2DD5011200A6B05A /* HomeViewController.xib */; };
+		22F7A7912DD5087B00A6B05A /* FavoutieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7A78F2DD5087B00A6B05A /* FavoutieViewController.swift */; };
+		22F7A7922DD5087B00A6B05A /* FavoutieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F7A7902DD5087B00A6B05A /* FavoutieViewController.xib */; };
+		22F7A7972DD51A3100A6B05A /* SportViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7A7952DD51A3100A6B05A /* SportViewCell.swift */; };
+		22F7A7982DD51A3100A6B05A /* SportViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F7A7962DD51A3100A6B05A /* SportViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +48,6 @@
 		22335DC72DD4D2B50076422C /* Sportify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sportify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22335DCA2DD4D2B50076422C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22335DCC2DD4D2B50076422C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		22335DCE2DD4D2B50076422C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		22335DD12DD4D2B50076422C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22335DD42DD4D2B50076422C /* Sportify.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sportify.xcdatamodel; sourceTree = "<group>"; };
 		22335DD62DD4D2B60076422C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22335DD92DD4D2B60076422C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +57,16 @@
 		22335DEA2DD4D2B60076422C /* SportifyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportifyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22335DEE2DD4D2B60076422C /* SportifyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportifyUITests.swift; sourceTree = "<group>"; };
 		22335DF02DD4D2B60076422C /* SportifyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportifyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		22AAA0EB2DD52EBD0092F713 /* LeaguesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesTableViewController.swift; sourceTree = "<group>"; };
+		22AAA0EC2DD52EBD0092F713 /* LeaguesTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaguesTableViewController.xib; sourceTree = "<group>"; };
+		22AAA0EF2DD52F100092F713 /* LeaguesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesTableViewCell.swift; sourceTree = "<group>"; };
+		22AAA0F02DD52F100092F713 /* LeaguesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaguesTableViewCell.xib; sourceTree = "<group>"; };
+		22F7A78B2DD5011200A6B05A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		22F7A78C2DD5011200A6B05A /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		22F7A78F2DD5087B00A6B05A /* FavoutieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoutieViewController.swift; sourceTree = "<group>"; };
+		22F7A7902DD5087B00A6B05A /* FavoutieViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoutieViewController.xib; sourceTree = "<group>"; };
+		22F7A7952DD51A3100A6B05A /* SportViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportViewCell.swift; sourceTree = "<group>"; };
+		22F7A7962DD51A3100A6B05A /* SportViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SportViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +117,15 @@
 		22335DC92DD4D2B50076422C /* Sportify */ = {
 			isa = PBXGroup;
 			children = (
+				22F7A7932DD519B100A6B05A /* Views */,
 				22335DCA2DD4D2B50076422C /* AppDelegate.swift */,
 				22335DCC2DD4D2B50076422C /* SceneDelegate.swift */,
-				22335DCE2DD4D2B50076422C /* ViewController.swift */,
-				22335DD02DD4D2B50076422C /* Main.storyboard */,
 				22335DD62DD4D2B60076422C /* Assets.xcassets */,
 				22335DD82DD4D2B60076422C /* LaunchScreen.storyboard */,
 				22335DDB2DD4D2B60076422C /* Info.plist */,
 				22335DD32DD4D2B50076422C /* Sportify.xcdatamodeld */,
+				22F7A78F2DD5087B00A6B05A /* FavoutieViewController.swift */,
+				22F7A7902DD5087B00A6B05A /* FavoutieViewController.xib */,
 			);
 			path = Sportify;
 			sourceTree = "<group>";
@@ -128,6 +145,37 @@
 				22335DF02DD4D2B60076422C /* SportifyUITestsLaunchTests.swift */,
 			);
 			path = SportifyUITests;
+			sourceTree = "<group>";
+		};
+		22AAA0E62DD52E730092F713 /* LeaguesView */ = {
+			isa = PBXGroup;
+			children = (
+				22AAA0EB2DD52EBD0092F713 /* LeaguesTableViewController.swift */,
+				22AAA0EC2DD52EBD0092F713 /* LeaguesTableViewController.xib */,
+				22AAA0EF2DD52F100092F713 /* LeaguesTableViewCell.swift */,
+				22AAA0F02DD52F100092F713 /* LeaguesTableViewCell.xib */,
+			);
+			path = LeaguesView;
+			sourceTree = "<group>";
+		};
+		22F7A7932DD519B100A6B05A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				22AAA0E62DD52E730092F713 /* LeaguesView */,
+				22F7A7942DD519DC00A6B05A /* HomeView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		22F7A7942DD519DC00A6B05A /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				22F7A78B2DD5011200A6B05A /* HomeViewController.swift */,
+				22F7A78C2DD5011200A6B05A /* HomeViewController.xib */,
+				22F7A7952DD51A3100A6B05A /* SportViewCell.swift */,
+				22F7A7962DD51A3100A6B05A /* SportViewCell.xib */,
+			);
+			path = HomeView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,9 +282,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22AAA0F22DD52F100092F713 /* LeaguesTableViewCell.xib in Resources */,
 				22335DDA2DD4D2B60076422C /* LaunchScreen.storyboard in Resources */,
+				22F7A7982DD51A3100A6B05A /* SportViewCell.xib in Resources */,
+				22AAA0EE2DD52EBD0092F713 /* LeaguesTableViewController.xib in Resources */,
+				22F7A7922DD5087B00A6B05A /* FavoutieViewController.xib in Resources */,
 				22335DD72DD4D2B60076422C /* Assets.xcassets in Resources */,
-				22335DD22DD4D2B50076422C /* Main.storyboard in Resources */,
+				22F7A78E2DD5011200A6B05A /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +313,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22335DCF2DD4D2B50076422C /* ViewController.swift in Sources */,
 				22335DD52DD4D2B50076422C /* Sportify.xcdatamodeld in Sources */,
+				22F7A7912DD5087B00A6B05A /* FavoutieViewController.swift in Sources */,
 				22335DCB2DD4D2B50076422C /* AppDelegate.swift in Sources */,
 				22335DCD2DD4D2B50076422C /* SceneDelegate.swift in Sources */,
+				22F7A78D2DD5011200A6B05A /* HomeViewController.swift in Sources */,
+				22F7A7972DD51A3100A6B05A /* SportViewCell.swift in Sources */,
+				22AAA0F12DD52F100092F713 /* LeaguesTableViewCell.swift in Sources */,
+				22AAA0ED2DD52EBD0092F713 /* LeaguesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +357,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		22335DD02DD4D2B50076422C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				22335DD12DD4D2B50076422C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		22335DD82DD4D2B60076422C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -450,7 +498,6 @@
 				INFOPLIST_FILE = Sportify/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -477,7 +524,6 @@
 				INFOPLIST_FILE = Sportify/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
