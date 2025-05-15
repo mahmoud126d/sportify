@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabBarController = UITabBarController()
         let tab1 = HomeViewController(nibName: "HomeViewController", bundle: nil)
         
-        let tab2 = FavoutieViewController(nibName: "FavoutieViewController", bundle: nil)
+        let tab2 = FavoriteTableViewController(nibName: "FavoriteTableViewController", bundle: nil)
         
         tab1.tabBarItem = UITabBarItem(title: "Home", image: homeIcon, tag: 1)
         tab2.tabBarItem = UITabBarItem(title: "Favourite", image: fvIcon, tag: 2)
