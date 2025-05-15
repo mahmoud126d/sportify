@@ -14,6 +14,8 @@ class LeaguesTableViewController: UITableViewController {
         
         let leagueTableCellnib = UINib(nibName: "LeaguesTableViewCell", bundle: nil)
         tableView.register(leagueTableCellnib, forCellReuseIdentifier: "leagueCell")
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
     }
 
     // MARK: - Table view data source
@@ -36,8 +38,10 @@ class LeaguesTableViewController: UITableViewController {
         cell.leagueImage.image = UIImage(named: "football")
         return cell
     }
-    
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let leagueDetailVc = LeaguesDetailCollectionViewController()
+        navigationController?.pushViewController(leagueDetailVc, animated: true)
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
