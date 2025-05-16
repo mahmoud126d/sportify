@@ -9,12 +9,12 @@ import Foundation
 
 struct LeagueDto : Codable{
     
-    let LeagueKey : Int?
+    let leagueKey : Int?
     let leagueName : String?
     let leagueLogo : String?
     
     enum CodingKeys: String, CodingKey {
-        case LeagueKey = "league_key"
+        case leagueKey = "league_key"
         case leagueName = "league_name"
         case leagueLogo = "league_logo"
     }

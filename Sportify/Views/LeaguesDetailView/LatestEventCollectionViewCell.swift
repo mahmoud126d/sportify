@@ -19,6 +19,9 @@ class LatestEventCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var homeTeamLabel: UILabel!
     
     @IBOutlet weak var awayTeamLabel: UILabel!
+    
+    @IBOutlet weak var scoreLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

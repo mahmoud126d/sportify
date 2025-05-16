@@ -12,6 +12,7 @@ class TeamDetailsViewController: UIViewController  {
     @IBOutlet weak var playersTable: UITableView!
     let coaches = ["klob","Pep"]
     let players = ["messi","ronaldo","salah"]
+    var teamKey:Int?
     override func viewDidLoad() {
         super.viewDidLoad()
 

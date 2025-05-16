@@ -115,6 +115,7 @@
                 <outlet property="dateLabel" destination="ygZ-ae-q9I" id="99c-bK-t1Y"/>
                 <outlet property="homeTeamImage" destination="S0w-MY-Kfz" id="umZ-X9-Lkq"/>
                 <outlet property="homeTeamLabel" destination="GU7-YG-vnp" id="ad4-mH-zs3"/>
+                <outlet property="scoreLabel" destination="efv-TF-p2J" id="2hc-aF-VFK"/>
                 <outlet property="timeLabel" destination="08M-xc-l03" id="sF3-a7-lKg"/>
             </connections>
             <point key="canvasLocation" x="135.87786259541986" y="24.647887323943664"/>

@@ -35,7 +35,7 @@ class LeaguesPresenter{
             switch result{
             case .success(let leagues):
                 self?._leagues = leagues
-                self?.leaguesView.displayLeagues(leagues: leagues)
+                //self?.leaguesView.displayLeagues(leagues: leagues)
             case .failure(let error):
                 print(error.localizedDescription)
             }
