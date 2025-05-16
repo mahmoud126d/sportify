@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		222A41772DD75395007FDCCF /* LeagueDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222A41762DD75395007FDCCF /* LeagueDto.swift */; };
+		222A41792DD7558E007FDCCF /* NetworkManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222A41782DD7558E007FDCCF /* NetworkManger.swift */; };
+		222A417B2DD755AC007FDCCF /* NetworkMangerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222A417A2DD755AC007FDCCF /* NetworkMangerProtocol.swift */; };
+		222A417E2DD75606007FDCCF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 222A417D2DD75606007FDCCF /* Alamofire */; };
+		222A41812DD75711007FDCCF /* LeaguesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222A41802DD75711007FDCCF /* LeaguesPresenter.swift */; };
+		222A41832DD7572E007FDCCF /* LeaguesViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222A41822DD7572E007FDCCF /* LeaguesViewProtocol.swift */; };
+		222A41862DD75F0D007FDCCF /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 222A41852DD75F0D007FDCCF /* SDWebImageSwiftUI */; };
 		22335DCB2DD4D2B50076422C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22335DCA2DD4D2B50076422C /* AppDelegate.swift */; };
 		22335DCD2DD4D2B50076422C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22335DCC2DD4D2B50076422C /* SceneDelegate.swift */; };
 		22335DD52DD4D2B50076422C /* Sportify.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22335DD32DD4D2B50076422C /* Sportify.xcdatamodeld */; };
@@ -57,6 +64,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		222A41762DD75395007FDCCF /* LeagueDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueDto.swift; sourceTree = "<group>"; };
+		222A41782DD7558E007FDCCF /* NetworkManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManger.swift; sourceTree = "<group>"; };
+		222A417A2DD755AC007FDCCF /* NetworkMangerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMangerProtocol.swift; sourceTree = "<group>"; };
+		222A41802DD75711007FDCCF /* LeaguesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesPresenter.swift; sourceTree = "<group>"; };
+		222A41822DD7572E007FDCCF /* LeaguesViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesViewProtocol.swift; sourceTree = "<group>"; };
 		22335DC72DD4D2B50076422C /* Sportify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sportify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22335DCA2DD4D2B50076422C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22335DCC2DD4D2B50076422C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +110,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				222A41862DD75F0D007FDCCF /* SDWebImageSwiftUI in Frameworks */,
+				222A417E2DD75606007FDCCF /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +132,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		222A41752DD7537B007FDCCF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				222A41762DD75395007FDCCF /* LeagueDto.swift */,
+				222A41782DD7558E007FDCCF /* NetworkManger.swift */,
+				222A417A2DD755AC007FDCCF /* NetworkMangerProtocol.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		222A417F2DD756FD007FDCCF /* LeaguesPresenter */ = {
+			isa = PBXGroup;
+			children = (
+				222A41802DD75711007FDCCF /* LeaguesPresenter.swift */,
+				222A41822DD7572E007FDCCF /* LeaguesViewProtocol.swift */,
+			);
+			path = LeaguesPresenter;
+			sourceTree = "<group>";
+		};
 		22335DBE2DD4D2B40076422C = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +174,7 @@
 		22335DC92DD4D2B50076422C /* Sportify */ = {
 			isa = PBXGroup;
 			children = (
+				222A41752DD7537B007FDCCF /* Model */,
 				22F7A7932DD519B100A6B05A /* Views */,
 				22335DCA2DD4D2B50076422C /* AppDelegate.swift */,
 				22335DCC2DD4D2B50076422C /* SceneDelegate.swift */,
@@ -172,6 +206,7 @@
 		22AAA0E62DD52E730092F713 /* LeaguesView */ = {
 			isa = PBXGroup;
 			children = (
+				222A417F2DD756FD007FDCCF /* LeaguesPresenter */,
 				22AAA0EB2DD52EBD0092F713 /* LeaguesTableViewController.swift */,
 				22AAA0EC2DD52EBD0092F713 /* LeaguesTableViewController.xib */,
 				22AAA0EF2DD52F100092F713 /* LeaguesTableViewCell.swift */,
@@ -262,6 +297,10 @@
 			dependencies = (
 			);
 			name = Sportify;
+			packageProductDependencies = (
+				222A417D2DD75606007FDCCF /* Alamofire */,
+				222A41852DD75F0D007FDCCF /* SDWebImageSwiftUI */,
+			);
 			productName = Sportify;
 			productReference = 22335DC72DD4D2B50076422C /* Sportify.app */;
 			productType = "com.apple.product-type.application";
@@ -334,6 +373,10 @@
 				Base,
 			);
 			mainGroup = 22335DBE2DD4D2B40076422C;
+			packageReferences = (
+				222A417C2DD75606007FDCCF /* XCRemoteSwiftPackageReference "Alamofire" */,
+				222A41842DD75F0D007FDCCF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 22335DC82DD4D2B50076422C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -389,7 +432,8 @@
 			files = (
 				C233C8062DD6685E00BE0C9A /* LeaguesDetailCollectionViewController.swift in Sources */,
 				22335DD52DD4D2B50076422C /* Sportify.xcdatamodeld in Sources */,
-
+				222A41792DD7558E007FDCCF /* NetworkManger.swift in Sources */,
+				222A41832DD7572E007FDCCF /* LeaguesViewProtocol.swift in Sources */,
 				C233C7E22DD6517700BE0C9A /* FavoriteTableViewController.swift in Sources */,
 				C233C80B2DD668F900BE0C9A /* UpcomingEventCollectionViewCell.swift in Sources */,
 				22AFC17B2DD608B30060C450 /* PlayerTableViewCell.swift in Sources */,
@@ -397,9 +441,12 @@
 				22335DCD2DD4D2B50076422C /* SceneDelegate.swift in Sources */,
 				22F7A78D2DD5011200A6B05A /* HomeViewController.swift in Sources */,
 				22F7A7972DD51A3100A6B05A /* SportViewCell.swift in Sources */,
+				222A41772DD75395007FDCCF /* LeagueDto.swift in Sources */,
+				222A41812DD75711007FDCCF /* LeaguesPresenter.swift in Sources */,
 				C233C84F2DD6965A00BE0C9A /* LatestEventCollectionViewCell.swift in Sources */,
 				C233C8152DD67CE800BE0C9A /* TeamsCollectionViewCell.swift in Sources */,
 				22AAA0F12DD52F100092F713 /* LeaguesTableViewCell.swift in Sources */,
+				222A417B2DD755AC007FDCCF /* NetworkMangerProtocol.swift in Sources */,
 				22AFC1772DD604F80060C450 /* TeamDetailsViewController.swift in Sources */,
 				22AAA0ED2DD52EBD0092F713 /* LeaguesTableViewController.swift in Sources */,
 			);
@@ -732,6 +779,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		222A417C2DD75606007FDCCF /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+		222A41842DD75F0D007FDCCF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		222A417D2DD75606007FDCCF /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 222A417C2DD75606007FDCCF /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		222A41852DD75F0D007FDCCF /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 222A41842DD75F0D007FDCCF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		22335DD32DD4D2B50076422C /* Sportify.xcdatamodeld */ = {
