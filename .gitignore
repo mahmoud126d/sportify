@@ -1,1 +1,3 @@
-Sportify.xcodeproj/project.xcworkspace/xcuserdata/*/UserInterfaceState.xcuserstate
+# Xcode
+*.xcuserstate
+xcuserdata/
