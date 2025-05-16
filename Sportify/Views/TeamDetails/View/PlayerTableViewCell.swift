@@ -1,17 +1,19 @@
 //
-//  LeaguesTableViewCell.swift
+//  PlayerTableViewCell.swift
 //  Sportify
 //
-//  Created by Macos on 14/05/2025.
+//  Created by Macos on 15/05/2025.
 //
 
 import UIKit
 
-class LeaguesTableViewCell: UITableViewCell {
+class PlayerTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var leagueNameLabel: UILabel!
+    @IBOutlet weak var playerImage: UIImageView!
     
-    @IBOutlet weak var leagueImage: UIImageView!
+    @IBOutlet weak var playerName: UILabel!
+    
+    @IBOutlet weak var playerRole: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

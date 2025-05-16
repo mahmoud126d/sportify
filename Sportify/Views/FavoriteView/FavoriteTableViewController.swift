@@ -1,30 +1,24 @@
 //
-//  LeaguesTableViewController.swift
+//  FavoriteTableViewController.swift
 //  Sportify
 //
-//  Created by Macos on 14/05/2025.
+//  Created by Aya Emam on 15/05/2025.
 //
 
 import UIKit
 
-class LeaguesTableViewController: UITableViewController {
+class FavoriteTableViewController: UITableViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let leagueTableCellnib = UINib(nibName: "LeaguesTableViewCell", bundle: nil)
         tableView.register(leagueTableCellnib, forCellReuseIdentifier: "leagueCell")
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
     }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 10
@@ -34,14 +28,12 @@ class LeaguesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "leagueCell", for: indexPath) as! LeaguesTableViewCell
         
-        cell.leagueNameLabel.text = "league"
-        cell.leagueImage.image = UIImage(named: "football")
+        cell.leagueNameLabel.text = "Favorite"
+        cell.leagueImage.image = UIImage(systemName: "star.fill")
         return cell
     }
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let leagueDetailVc = LeaguesDetailCollectionViewController()
-        navigationController?.pushViewController(leagueDetailVc, animated: true)
-    }
+    
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
