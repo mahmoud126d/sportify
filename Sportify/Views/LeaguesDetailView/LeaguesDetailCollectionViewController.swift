@@ -69,7 +69,9 @@ class LeaguesDetailCollectionViewController: UICollectionViewController , UIColl
         }
         if let currentLeague = league, let sportType = sport {
             leagueDetailsPresenter?.setCurrentLeague(league: currentLeague, sport: sportType)
+            print(currentLeague)
         }
+        
         leagueDetailsPresenter?.fetchUpcommingEvents(sport: sport ?? "football", leagueId: leagueId ?? 255)
         leagueDetailsPresenter?.fetchLatestEvents(sport: sport ?? "football", leagueId: leagueId ?? 255)
         leagueDetailsPresenter?.fetchTeams(sport: sport ?? "football", leagueId: leagueId ?? 255)
