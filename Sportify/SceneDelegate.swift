@@ -30,7 +30,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         tab2.tabBarItem = UITabBarItem(title: "Favourite", image: fvIcon, tag: 2)
         
         let controllers = [tab1, tab2]
-        
+        tabBarController.tabBar.tintColor = .black
+        tabBarController.tabBar.unselectedItemTintColor = .lightGray
         tabBarController.viewControllers = controllers
         
         window = UIWindow(windowScene: windowScene)
@@ -40,7 +41,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
-        
+        navController.navigationBar.tintColor = .black
+        navController.navigationBar.barTintColor = .white
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
