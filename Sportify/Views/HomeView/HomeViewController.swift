@@ -10,8 +10,8 @@ import UIKit
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var sportsCollectionView: UICollectionView!
-    private let sports = ["Football2","Tennis2","Cricket2",
-    "BasketBall2"]
+    private let sports = ["Football","Tennis","Cricket",
+    "BasketBall"]
     override func viewDidLoad() {
         super.viewDidLoad()
         // Setup UI elements, connect outlets, and add actions here
