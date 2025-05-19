@@ -69,6 +69,8 @@ class FavoriteTableViewController: UITableViewController , FavoritesViewProtocol
             let leagueDetailVc = LeaguesDetailCollectionViewController()
             leagueDetailVc.leagueId = presenter?.favoriteLeagues[indexPath.row].leagueId
             leagueDetailVc.sport = presenter.favoriteLeagues[indexPath.row].sport
+            leagueDetailVc.leagueName = presenter?.favoriteLeagues[indexPath.row].leagueName ?? "No name"
+            leagueDetailVc.leagueImage = presenter?.favoriteLeagues[indexPath.row].leagueLogo ?? "star"
             navigationController?.pushViewController(leagueDetailVc, animated: true)
         }else{
             let alert = UIAlertController(

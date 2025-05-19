@@ -20,13 +20,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sports" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsv-w1-thb">
-                    <rect key="frame" x="148.33333333333334" y="75" width="96.666666666666657" height="40.666666666666657"/>
+                    <rect key="frame" x="148.33333333333334" y="59" width="96.666666666666657" height="40.666666666666657"/>
                     <fontDescription key="fontDescription" type="system" pointSize="34"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="kp7-zU-bRo">
-                    <rect key="frame" x="16" y="132.66666666666669" width="361" height="631.33333333333326"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="kp7-zU-bRo">
+                    <rect key="frame" x="16" y="116.66666666666669" width="361" height="647.33333333333326"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Tho-XR-0Tf">
                         <size key="itemSize" width="128" height="128"/>
@@ -37,7 +37,7 @@
                 </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+            <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="kp7-zU-bRo" secondAttribute="bottom" constant="54" id="0ui-5h-ANY"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kp7-zU-bRo" secondAttribute="trailing" constant="16" id="5Zn-2g-lV1"/>
@@ -45,14 +45,14 @@
                 <constraint firstItem="kp7-zU-bRo" firstAttribute="top" secondItem="fsv-w1-thb" secondAttribute="bottom" constant="17" id="Og3-1i-Awc"/>
                 <constraint firstItem="kp7-zU-bRo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="UyE-Yg-2Ic"/>
                 <constraint firstItem="kp7-zU-bRo" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Zvd-K2-cAE"/>
-                <constraint firstItem="fsv-w1-thb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="qiI-iI-zfU"/>
+                <constraint firstItem="fsv-w1-thb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="qiI-iI-zfU"/>
             </constraints>
             <point key="canvasLocation" x="365.64885496183206" y="-63.380281690140848"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

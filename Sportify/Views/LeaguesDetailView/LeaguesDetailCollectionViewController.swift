@@ -69,7 +69,9 @@ class LeaguesDetailCollectionViewController: UICollectionViewController , UIColl
         }
         if let currentLeague = league, let sportType = sport {
             leagueDetailsPresenter?.setCurrentLeague(league: currentLeague, sport: sportType)
+            print(currentLeague)
         }
+        
         leagueDetailsPresenter?.fetchUpcommingEvents(sport: sport ?? "football", leagueId: leagueId ?? 255)
         leagueDetailsPresenter?.fetchLatestEvents(sport: sport ?? "football", leagueId: leagueId ?? 255)
         leagueDetailsPresenter?.fetchTeams(sport: sport ?? "football", leagueId: leagueId ?? 255)
@@ -95,7 +97,7 @@ class LeaguesDetailCollectionViewController: UICollectionViewController , UIColl
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "upcomingCell", for: indexPath) as! UpcomingEventCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "latestEventCell", for: indexPath) as! LatestEventCollectionViewCell
             let upcommingEvent = leagueDetailsPresenter?.upcommingEvents[indexPath.row]
             
             setUpCommingEventsCell(upcommingEvent: upcommingEvent,cell: cell)
@@ -113,7 +115,7 @@ class LeaguesDetailCollectionViewController: UICollectionViewController , UIColl
         }else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "teamsCell", for: indexPath) as! TeamsCollectionViewCell
             
-            cell.teamName.text = leagueDetailsPresenter?.teams[indexPath.row].teamName
+//            cell.teamName.text = leagueDetailsPresenter?.teams[indexPath.row].teamName
             if let imageUrl = leagueDetailsPresenter?.teams[indexPath.row].teamLogo {
                 cell.teamImage.sd_setImage(with: URL(string: imageUrl), placeholderImage: UIImage(named: "placeholder.png"))
             }else{
@@ -123,7 +125,7 @@ class LeaguesDetailCollectionViewController: UICollectionViewController , UIColl
             return cell
         }
     }
-    private func setUpCommingEventsCell(upcommingEvent:FixtureDto?,cell:UpcomingEventCollectionViewCell){
+    private func setUpCommingEventsCell(upcommingEvent:FixtureDto?,cell:LatestEventCollectionViewCell){
         cell.homeTeamLabel.text = upcommingEvent?.eventHomeTeam
         cell.awayTeamLabel.text = upcommingEvent?.eventAwayTeam
         cell.dateLabel.text = upcommingEvent?.eventDate
@@ -185,12 +187,12 @@ class LeaguesDetailCollectionViewController: UICollectionViewController , UIColl
     func teamsSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(200), heightDimension: .absolute(200))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(153), heightDimension: .absolute(120))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 32)
+        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 10)
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
-        section.contentInsets = .init(top: 50, leading: 16, bottom: 16, trailing: 0)
+        section.contentInsets = .init(top: 20, leading: 16, bottom: 16, trailing: 0)
         
         return section
     }
@@ -215,6 +217,7 @@ class LeaguesDetailCollectionViewController: UICollectionViewController , UIColl
         func updateFavoriteStatus(isFavorite: Bool) {
             let heartImage = isFavorite ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
             favoriteButton.image = heartImage
+            favoriteButton.tintColor = isFavorite ? .systemRed : .label 
         }
         
         func showError(_ message: String) {
