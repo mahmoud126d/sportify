@@ -17,13 +17,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="315" height="432"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lcF-L7-GzR">
-                        <rect key="frame" x="35" y="59" width="245" height="293.33333333333331"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tennis2" translatesAutoresizingMaskIntoConstraints="NO" id="lcF-L7-GzR">
+                        <rect key="frame" x="0.0" y="59" width="315" height="432"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGy-XY-Rbv">
-                        <rect key="frame" x="121.66666666666666" y="352.33333333333331" width="71.666666666666657" height="33.666666666666686"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                        <nil key="textColor"/>
+                        <rect key="frame" x="112" y="339" width="91.333333333333314" height="43"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -31,23 +31,31 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="hGy-XY-Rbv" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="0yO-L6-ULx"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="top" secondItem="lcF-L7-GzR" secondAttribute="top" id="6EK-aJ-LR6"/>
-                <constraint firstItem="lcF-L7-GzR" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="35" id="Hsw-0E-pUs"/>
+                <constraint firstItem="lcF-L7-GzR" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" id="7ic-78-Htf"/>
+                <constraint firstItem="lcF-L7-GzR" firstAttribute="bottom" secondItem="ZTg-uK-7eu" secondAttribute="bottom" constant="93" id="9sM-bN-9bY"/>
+                <constraint firstItem="lcF-L7-GzR" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="Hsw-0E-pUs"/>
                 <constraint firstItem="lcF-L7-GzR" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="PFw-kd-Scp"/>
-                <constraint firstItem="hGy-XY-Rbv" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="lSu-HQ-Lia"/>
-                <constraint firstItem="hGy-XY-Rbv" firstAttribute="top" secondItem="lcF-L7-GzR" secondAttribute="bottom" id="ywO-gg-I80"/>
-                <constraint firstAttribute="bottom" secondItem="hGy-XY-Rbv" secondAttribute="bottom" constant="46" id="yxf-P7-dg8"/>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="lcF-L7-GzR" secondAttribute="trailing" constant="35" id="z56-dR-F1G"/>
+                <constraint firstItem="lcF-L7-GzR" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="ssF-9M-xV8"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="hGy-XY-Rbv" secondAttribute="bottom" constant="16" id="v5Q-UH-kZf"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="lcF-L7-GzR" secondAttribute="trailing" id="z56-dR-F1G"/>
             </constraints>
             <size key="customSize" width="315" height="432"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="20"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="sportImageView" destination="lcF-L7-GzR" id="O3s-jm-jTK"/>
                 <outlet property="sportLabel" destination="hGy-XY-Rbv" id="ncy-Yc-awz"/>
             </connections>
-            <point key="canvasLocation" x="-22" y="-17"/>
+            <point key="canvasLocation" x="130.53435114503816" y="80.281690140845072"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="tennis2" width="1674" height="1256"/>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
