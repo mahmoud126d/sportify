@@ -82,4 +82,22 @@ class NetworkManger : NetworkMangerProtocol{
                 
             }
     }
+    
+    func fetchTeamDetails(sport: String, teamId: Int, completion: @escaping TeamDetailsCompletion) {
+            AF.request("https://apiv2.allsportsapi.com/\(sport)/?met=Teams&teamId=\(teamId)&APIkey=e99630517917638f1996e33140a36e0e599db1539710fd3e53a2ca3175417718")
+                .validate()
+                .responseDecodable(of: TeamDetailResponse.self) { response in
+                    switch response.result {
+                    case .success(let data):
+                        guard let result = data.result else {
+                            print("something went wrong")
+                            return
+                        }
+                        completion(.success(result))
+                    case .failure(let error):
+                        completion(.failure(error))
+                    }
+                    
+                }
+        }
 }
