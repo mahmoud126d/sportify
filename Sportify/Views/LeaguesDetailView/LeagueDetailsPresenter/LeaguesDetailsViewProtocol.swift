@@ -13,4 +13,6 @@ protocol LeaguesDetailsViewProtocol{
     func displayLatestEvents(latestEvents:[FixtureDto])
     func displayTeams(teams:[TeamDto])
     
+    func updateFavoriteStatus(isFavorite: Bool)
+    func showError(_ message: String)
 }

@@ -11,6 +11,8 @@ class LeagueDetailsPresenter{
     
     private let leagueDetailsView:LeaguesDetailsViewProtocol
     private let networkManger:NetworkMangerProtocol
+    let coreDataManager: CoreDataManager
+    private var _sport: String?
     
     private var _upcommingEvents : [FixtureDto] = [] {
         didSet{
@@ -47,12 +49,17 @@ class LeagueDetailsPresenter{
             return _teams
         }
     }
-    
-    init(leagueDetailsView: LeaguesDetailsViewProtocol, networkManger: NetworkMangerProtocol = NetworkManger.shared) {
+    private var _currentLeague: LeagueDto?
+    var currentLeague: LeagueDto? {
+        get{
+            return _currentLeague
+        }
+    }
+    init(leagueDetailsView: LeaguesDetailsViewProtocol, networkManger: NetworkMangerProtocol = NetworkManger.shared , coreDataManager: CoreDataManager = CoreDataManager.shared ){
         self.leagueDetailsView = leagueDetailsView
         self.networkManger = networkManger
+        self.coreDataManager = coreDataManager
     }
-    
     func fetchUpcommingEvents(sport:String,leagueId:Int){
         networkManger.fetchUpCommingEvents(sport: sport,leagueId:leagueId){[weak self]
             result in
@@ -88,4 +95,49 @@ class LeagueDetailsPresenter{
             }
         }
     }
-}
+    func setCurrentLeague(league: LeagueDto, sport: String) {
+            _currentLeague = league
+            _sport = sport
+            checkFavoriteStatus()
+        }
+    func toggleFavoriteStatus(sport: String, leagueId: Int) {
+             
+            guard let league = _currentLeague, (leagueId != 0) else {
+                print(sport,leagueId)
+                return
+            }
+        let validLeagueName = _currentLeague?.leagueName ?? "League \(leagueId)"
+            let leagueToSave = LeagueDto(
+                leagueKey: league.leagueKey,
+                leagueName: validLeagueName,
+                leagueLogo: league.leagueLogo
+            )
+            
+            
+            if coreDataManager.isLeagueInFavorites(leagueId: leagueId) {
+                if coreDataManager.removeLeagueFromFavorites(leagueId: leagueId) {
+                    leagueDetailsView.updateFavoriteStatus(isFavorite: false)
+                    print("removed")
+                } else {
+                    leagueDetailsView.showError("Failed to remove league from favorites")
+                }
+            } else {
+                if coreDataManager.saveLeagueToFavorites(league: leagueToSave, sport: _sport ?? sport) {
+                    leagueDetailsView.updateFavoriteStatus(isFavorite: true)
+                    print("added")
+                } else {
+                    leagueDetailsView.showError("Failed to add league to favorites")
+                }
+            }
+        }
+        
+        func checkFavoriteStatus() {
+            guard let leagueId = _currentLeague?.leagueKey else {
+                leagueDetailsView.updateFavoriteStatus(isFavorite: false)
+                return
+            }
+            
+            let isFavorite = coreDataManager.isLeagueInFavorites(leagueId: leagueId)
+            leagueDetailsView.updateFavoriteStatus(isFavorite: isFavorite)
+        }
+    }

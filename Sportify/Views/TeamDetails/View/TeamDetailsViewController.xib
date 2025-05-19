@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +11,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TeamDetailsViewController" customModule="Sportify" customModuleProvider="target">
             <connections>
                 <outlet property="playersTable" destination="0EX-WL-jRh" id="XVx-w8-7QR"/>
+                <outlet property="teamLogo" destination="v3S-ow-Uf5" id="zbX-7q-iwD"/>
+                <outlet property="teamNameLabel" destination="uV5-Cu-FUe" id="k3j-Kp-U88"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,17 +22,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="juventus" translatesAutoresizingMaskIntoConstraints="NO" id="v3S-ow-Uf5">
-                    <rect key="frame" x="0.0" y="59" width="393" height="128"/>
+                    <rect key="frame" x="0.0" y="118" width="393" height="128"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="128" id="bFK-41-3nI"/>
                     </constraints>
                 </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0EX-WL-jRh">
-                    <rect key="frame" x="0.0" y="239.66666666666669" width="393" height="578.33333333333326"/>
+                    <rect key="frame" x="0.0" y="298.66666666666674" width="393" height="485.33333333333326"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Juventus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uV5-Cu-FUe">
-                    <rect key="frame" x="149.33333333333334" y="195" width="94.333333333333343" height="28.666666666666657"/>
+                    <rect key="frame" x="149.33333333333334" y="253.99999999999997" width="94.333333333333343" height="28.666666666666657"/>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -49,7 +51,7 @@
                 <constraint firstItem="uV5-Cu-FUe" firstAttribute="top" secondItem="v3S-ow-Uf5" secondAttribute="bottom" constant="8" symbolic="YES" id="ohn-5u-FLn"/>
                 <constraint firstItem="0EX-WL-jRh" firstAttribute="centerX" secondItem="uV5-Cu-FUe" secondAttribute="centerX" id="y7Q-6C-GVT"/>
             </constraints>
-            <point key="canvasLocation" x="-981" y="-13"/>
+            <point key="canvasLocation" x="-982.44274809160299" y="-13.380281690140846"/>
         </view>
     </objects>
     <resources>

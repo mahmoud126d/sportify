@@ -55,6 +55,8 @@ class LeaguesTableViewController: UITableViewController , LeaguesViewProtocol{
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let leagueDetailVc = LeaguesDetailCollectionViewController()
         leagueDetailVc.leagueId = leaguesPresenter?.leageus[indexPath.row].leagueKey
+        leagueDetailVc.leagueName = leaguesPresenter?.leageus[indexPath.row].leagueName ?? "No name"
+        leagueDetailVc.leagueImage = leaguesPresenter?.leageus[indexPath.row].leagueLogo ?? "star"
         leagueDetailVc.sport = sport
         navigationController?.pushViewController(leagueDetailVc, animated: true)
     }

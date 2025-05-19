@@ -9,20 +9,20 @@ import UIKit
 
 
 class LeaguesDetailCollectionViewController: UICollectionViewController , UICollectionViewDelegateFlowLayout,LeaguesDetailsViewProtocol {
-
-    var leagueDetailsPresenter:LeagueDetailsPresenter?
-    var sport:String?
-    var leagueId:Int?
     
+    var leagueDetailsPresenter:LeagueDetailsPresenter?
+    var sport , leagueName , leagueImage :String?
+    var leagueId:Int?
+    private var favoriteButton: UIBarButtonItem!
     init() {
-            let layout = UICollectionViewFlowLayout()
-            super.init(collectionViewLayout: layout)
-        }
-
+        let layout = UICollectionViewFlowLayout()
+        super.init(collectionViewLayout: layout)
+    }
+    
     required init?(coder: NSCoder) {
-            let layout = UICollectionViewFlowLayout()
-            super.init(collectionViewLayout: layout)
-        }
+        let layout = UICollectionViewFlowLayout()
+        super.init(collectionViewLayout: layout)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,39 +42,45 @@ class LeaguesDetailCollectionViewController: UICollectionViewController , UIColl
     }
     private func setUpLayout(){
         let layout = UICollectionViewCompositionalLayout { sectionIndex, environment in
-               if sectionIndex == 0 {
-                   return self.upcomingEventsSection()
-               } else if sectionIndex == 1{
-                   return self.latestEventSection()
-               }else {
-                   return self.teamsSection()
-               }
-           }
-           collectionView.setCollectionViewLayout(layout, animated: true)
+            if sectionIndex == 0 {
+                return self.upcomingEventsSection()
+            } else if sectionIndex == 1{
+                return self.latestEventSection()
+            }else {
+                return self.teamsSection()
+            }
+        }
+        collectionView.setCollectionViewLayout(layout, animated: true)
     }
     private func setUpNavigationIcon(){
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
+        favoriteButton = UIBarButtonItem(
             image: UIImage(systemName: "heart"),
             style: .plain,
             target: self,
             action: #selector(favoriteButtonTapped)
         )
+        navigationItem.rightBarButtonItem = favoriteButton
     }
     private func setUpPresenter(){
         leagueDetailsPresenter = LeagueDetailsPresenter(leagueDetailsView: self)
+        var league = leagueDetailsPresenter?.currentLeague
+        if league == nil && leagueId != nil {
+            league = LeagueDto(leagueKey: leagueId, leagueName: leagueName, leagueLogo: leagueImage)
+        }
+        if let currentLeague = league, let sportType = sport {
+            leagueDetailsPresenter?.setCurrentLeague(league: currentLeague, sport: sportType)
+        }
         leagueDetailsPresenter?.fetchUpcommingEvents(sport: sport ?? "football", leagueId: leagueId ?? 255)
         leagueDetailsPresenter?.fetchLatestEvents(sport: sport ?? "football", leagueId: leagueId ?? 255)
         leagueDetailsPresenter?.fetchTeams(sport: sport ?? "football", leagueId: leagueId ?? 255)
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 3
     }
-
-
+    
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         switch section {
         case 0:
             return leagueDetailsPresenter?.upcommingEvents.count ?? 0
@@ -86,7 +92,7 @@ class LeaguesDetailCollectionViewController: UICollectionViewController , UIColl
             return 0
         }
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "upcomingCell", for: indexPath) as! UpcomingEventCollectionViewCell
@@ -193,13 +199,35 @@ class LeaguesDetailCollectionViewController: UICollectionViewController , UIColl
         if indexPath.section == 2 {
             let teamVc = TeamDetailsViewController()
             teamVc.teamKey = leagueDetailsPresenter?.teams[indexPath.row].teamKey
+            teamVc.sport = self.sport
             navigationController?.pushViewController(teamVc, animated: true)
         }
     }
     
     @objc func favoriteButtonTapped() {
-        print("Favorite button tapped")
-    }
+            if let sportType = sport, let id = leagueId {
+                leagueDetailsPresenter?.toggleFavoriteStatus(sport: sportType, leagueId: id)
+            } else {
+                showError("Missing sport or league ID")
+            }
+        }
+        
+        func updateFavoriteStatus(isFavorite: Bool) {
+            let heartImage = isFavorite ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
+            favoriteButton.image = heartImage
+        }
+        
+        func showError(_ message: String) {
+            let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alert, animated: true)
+        }
+        
+    func setCurrentLeague(_ league: LeagueDto) {
+            if let sportType = self.sport {
+                leagueDetailsPresenter?.setCurrentLeague(league: league, sport: sportType)
+            }
+        }
 
     func displayUpcommingEvents(upcommingEvents: [FixtureDto]) {
         
