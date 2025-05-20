@@ -6,6 +6,7 @@
 //
 import Foundation
 
+
 class TeamDetailsPresenter {
     private let teamDetailsView: TeamDetailsViewProtocol
     private let networkManager: NetworkMangerProtocol
@@ -49,17 +50,17 @@ class TeamDetailsPresenter {
     }
     
     func fetchTeamDetails(sport: String, teamId: Int) {
-        networkManager.fetchTeamDetails(sport: sport, teamId: teamId) { [weak self] result in
+        let requestType = ApiCallType.teamsDetails.rawValue
+        networkManager.fetchData(sport: sport, requestType: requestType, leagueId: teamId) { (result: Result<[TeamDetailDto], Error>) in
             switch result {
             case .success(let teamDetails):
-                guard let team = teamDetails.first else {
-                    return
-                }
-                self?._teamDetails = [team]
-                self?._players = team.players ?? []
-                self?._coaches = team.coaches ?? []
+                self._teamDetails = teamDetails
+                self._players = teamDetails.first?.players ?? []
+                self._coaches = teamDetails.first?.coaches ?? []
+                //print(teamsDetails)
             case .failure(let error):
-                print("Failed to fetch team details: \(error.localizedDescription)")
+                print("Failed to fetch leagues: \(error.localizedDescription)")
+                
             }
         }
     }

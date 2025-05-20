@@ -143,9 +143,9 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="basketball" width="128" height="128"/>
+        <image name="basketball" width="640" height="896"/>
         <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

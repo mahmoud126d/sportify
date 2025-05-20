@@ -161,12 +161,11 @@
 		222A41752DD7537B007FDCCF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				22307B432DDCE0D4004A3D77 /* Networking */,
 				C2586A182DD9493D001F1BF2 /* FavoriteLeagueModel.swift */,
 				C2586A162DD948DC001F1BF2 /* CoreDataManager.swift */,
 				C23366262DD8BE0A003DF2D9 /* TeamDetails.swift */,
 				222A41762DD75395007FDCCF /* LeagueDto.swift */,
-				222A41782DD7558E007FDCCF /* NetworkManger.swift */,
-				222A417A2DD755AC007FDCCF /* NetworkMangerProtocol.swift */,
 				222A418A2DD768A5007FDCCF /* FixtureModel.swift */,
 				222A41942DD79B39007FDCCF /* TeamDto.swift */,
 			);
@@ -197,6 +196,15 @@
 				222A41922DD77BF6007FDCCF /* DateManger.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		22307B432DDCE0D4004A3D77 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				222A41782DD7558E007FDCCF /* NetworkManger.swift */,
+				222A417A2DD755AC007FDCCF /* NetworkMangerProtocol.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		22335DBE2DD4D2B40076422C = {

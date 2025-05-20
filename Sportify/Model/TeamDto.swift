@@ -19,7 +19,3 @@ struct TeamDto : Codable{
     }
 }
 
-struct TeamResponse : Codable{
-    let success:Int?
-    let result:[TeamDto]?
-}

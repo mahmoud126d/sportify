@@ -30,10 +30,7 @@ class LeaguesDetailCollectionViewController: UICollectionViewController , UIColl
         setUpLayout()
         setUpNavigationIcon()
         setUpPresenter()
-        leagueDetailsPresenter?.fetchLeagues()
-        
-        
-        
+
     }
     
     private func setUpCells(){
@@ -76,8 +73,7 @@ class LeaguesDetailCollectionViewController: UICollectionViewController , UIColl
             print(currentLeague)
         }
         
-        leagueDetailsPresenter?.fetchUpcommingEvents(sport: sport ?? "football", leagueId: leagueId ?? 255)
-        leagueDetailsPresenter?.fetchLatestEvents(sport: sport ?? "football", leagueId: leagueId ?? 255)
+        leagueDetailsPresenter?.fetchEvents(sport: self.sport ?? "football", leagueId: leagueId ?? 152)
         leagueDetailsPresenter?.fetchTeams(sport: sport ?? "football", leagueId: leagueId ?? 255)
     }
     

@@ -16,11 +16,11 @@ struct DateManger{
         return formattedDate
     }
     
-    static func getFutureDate() -> String{
+    static func getNextWeekDate() -> String{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
 
-        if let futureDate = Calendar.current.date(byAdding: .day, value: 30, to: Date()) {
+        if let futureDate = Calendar.current.date(byAdding: .day, value: 7, to: Date()) {
             let formattedDate = dateFormatter.string(from: futureDate)
             return formattedDate
         }
@@ -28,11 +28,11 @@ struct DateManger{
         return ""
     }
     
-    static func getPastDate() -> String{
+    static func getPreviousWeekDate() -> String{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
 
-        if let futureDate = Calendar.current.date(byAdding: .day, value: -30, to: Date()) {
+        if let futureDate = Calendar.current.date(byAdding: .day, value: -7, to: Date()) {
             let formattedDate = dateFormatter.string(from: futureDate)
             return formattedDate
         }

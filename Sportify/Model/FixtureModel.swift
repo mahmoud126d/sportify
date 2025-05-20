@@ -31,8 +31,3 @@ struct FixtureDto : Decodable{
     
     
 }
-
-struct FixtureResponse : Decodable{
-    let success:Int?
-    let result:[FixtureDto]?
-}

@@ -8,6 +8,6 @@
 import Foundation
 
 protocol LeaguesViewProtocol{
-    func displayLeagues(leagues:[LeagueDto])
+    func displayLeagues()
     func showError(_ message: String)
 }

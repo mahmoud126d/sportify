@@ -61,7 +61,7 @@ class LeaguesTableViewController: UITableViewController , LeaguesViewProtocol{
         navigationController?.pushViewController(leagueDetailVc, animated: true)
     }
     
-    func displayLeagues(leagues:[LeagueDto]) {
+    func displayLeagues() {
         tableView.reloadData()
     }
     

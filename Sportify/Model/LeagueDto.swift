@@ -19,8 +19,3 @@ struct LeagueDto : Codable{
         case leagueLogo = "league_logo"
     }
 }
-
-struct LeagueResponse : Codable{
-    let success:Int?
-    let result:[LeagueDto]?
-}
