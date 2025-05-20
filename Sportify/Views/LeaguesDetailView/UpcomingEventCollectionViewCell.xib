@@ -11,26 +11,36 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="upcomingCell" id="gTV-IL-0wX" customClass="UpcomingEventCollectionViewCell" customModule="Sportify" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="390" height="200"/>
+            <rect key="frame" x="0.0" y="0.0" width="400" height="240"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="390" height="200"/>
+                <rect key="frame" x="0.0" y="0.0" width="400" height="240"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tennis" translatesAutoresizingMaskIntoConstraints="NO" id="TXf-GA-MmL">
-                        <rect key="frame" x="20" y="20" width="80" height="80"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Team1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7r-vO-8z0">
-                        <rect key="frame" x="20" y="130" width="80" height="20"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bfG-ir-A18" userLabel="HomeView">
+                        <rect key="frame" x="270" y="82.666666666666686" width="100" height="100"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tennis" translatesAutoresizingMaskIntoConstraints="NO" id="TXf-GA-MmL">
+                                <rect key="frame" x="10" y="10" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="A1X-Zp-Mgh"/>
+                                    <constraint firstAttribute="height" constant="80" id="RMR-aO-Btp"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="20" id="Ofn-ra-Ja8"/>
-                            <constraint firstAttribute="width" constant="80" id="eaY-1k-sqU"/>
+                            <constraint firstItem="TXf-GA-MmL" firstAttribute="centerX" secondItem="bfG-ir-A18" secondAttribute="centerX" id="3jP-q9-9iv"/>
+                            <constraint firstAttribute="width" constant="100" id="GIv-4F-2P1"/>
+                            <constraint firstAttribute="height" constant="100" id="NPl-S8-6cw"/>
+                            <constraint firstItem="TXf-GA-MmL" firstAttribute="centerY" secondItem="bfG-ir-A18" secondAttribute="centerY" id="i5x-gc-41h"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="50"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqG-gS-kTj">
                         <rect key="frame" x="175" y="40" width="40" height="40"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -38,26 +48,10 @@
                         <color key="textColor" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="tennis" translatesAutoresizingMaskIntoConstraints="NO" id="hqd-ha-Xss">
-                        <rect key="frame" x="290" y="20" width="80" height="80"/>
-                        <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="Bei-Ut-OiV"/>
-                            <constraint firstAttribute="height" constant="80" id="Ioj-RJ-Lnb"/>
-                            <constraint firstAttribute="width" constant="80" id="phM-xS-CFT"/>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="z5x-6d-Nds"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Hs-AB-9MR">
                         <rect key="frame" x="175" y="112" width="40" height="20"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iNF-jU-AiO">
-                        <rect key="frame" x="290" y="130" width="80" height="20"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -68,15 +62,58 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bfG-ir-A18">
-                        <rect key="frame" x="20" y="52" width="100" height="100"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7r-vO-8z0">
+                        <rect key="frame" x="270" y="182.66666666666666" width="100" height="20"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mLF-YB-WQ5" userLabel="AwayView">
+                        <rect key="frame" x="30" y="82.666666666666686" width="100" height="100"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tennis" translatesAutoresizingMaskIntoConstraints="NO" id="hqd-ha-Xss">
+                                <rect key="frame" x="10" y="9.3333333333333144" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="Dj8-aZ-jZY"/>
+                            <constraint firstAttribute="height" constant="100" id="d8Q-8v-tkr"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="50"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iNF-jU-AiO">
+                        <rect key="frame" x="30" y="198.66666666666666" width="100" height="20"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="j7r-vO-8z0" firstAttribute="leading" secondItem="bfG-ir-A18" secondAttribute="leading" id="6e2-gn-m5P"/>
+                <constraint firstItem="bfG-ir-A18" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="BYx-O0-0lz"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="bfG-ir-A18" secondAttribute="trailing" constant="30" id="CXo-LH-6bu"/>
+                <constraint firstItem="j7r-vO-8z0" firstAttribute="trailing" secondItem="bfG-ir-A18" secondAttribute="trailing" id="Cpe-ud-pq8"/>
+                <constraint firstItem="mLF-YB-WQ5" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="RSd-gS-Wbg"/>
+                <constraint firstItem="iNF-jU-AiO" firstAttribute="leading" secondItem="mLF-YB-WQ5" secondAttribute="leading" id="srh-js-T1x"/>
+                <constraint firstItem="mLF-YB-WQ5" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="30" id="t5h-6t-Aqh"/>
+                <constraint firstItem="iNF-jU-AiO" firstAttribute="trailing" secondItem="mLF-YB-WQ5" secondAttribute="trailing" id="uOx-G6-YBi"/>
+                <constraint firstItem="j7r-vO-8z0" firstAttribute="top" secondItem="bfG-ir-A18" secondAttribute="bottom" id="vJd-ME-0a3"/>
+                <constraint firstItem="iNF-jU-AiO" firstAttribute="top" secondItem="mLF-YB-WQ5" secondAttribute="bottom" constant="16" id="yqf-ii-ZwO"/>
+            </constraints>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="20"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="awayTeamImage" destination="hqd-ha-Xss" id="7FC-Js-JWX"/>
                 <outlet property="awayTeamLabel" destination="iNF-jU-AiO" id="s3x-8q-Lvy"/>
@@ -89,7 +126,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="tennis" width="128" height="128"/>
+        <image name="tennis" width="1674" height="1256"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

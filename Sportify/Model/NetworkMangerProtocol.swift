@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import Alamofire
 protocol NetworkMangerProtocol{
     
     typealias LeagueComplition = (Result<[LeagueDto],Error>) -> Void
@@ -25,4 +25,9 @@ protocol NetworkMangerProtocol{
     
     func fetchTeamDetails(sport: String, teamId: Int, completion: @escaping TeamDetailsCompletion)
 
+    func fetchData<T : Decodable>(
+        from url : String,
+        parameters : Parameters?,
+        complition : @escaping (Result<T,Error>)->Void
+    )
 }

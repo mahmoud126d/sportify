@@ -15,6 +15,25 @@ class NetworkManger : NetworkMangerProtocol{
     
     private init(){}
     
+    func fetchData<T : Decodable>(
+        from url : String,
+        parameters : Parameters?,
+        complition : @escaping (Result<T,Error>)->Void
+    ){
+        AF.request("https://apiv2.allsportsapi.com/",parameters: parameters)
+            .validate()
+            .responseDecodable(of:ApiResponse<T>.self){
+                response in
+                switch response.result{
+                case .success(let apiReponse):
+                    print(apiReponse.result.count)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        
+    }
+    
     func fetchLeagues(sport: String, completion: @escaping (Result<[LeagueDto], Error>) -> Void) {
         AF.request("https://apiv2.allsportsapi.com/\(sport)/?met=Leagues&APIkey=e99630517917638f1996e33140a36e0e599db1539710fd3e53a2ca3175417718")
             .validate()
@@ -100,4 +119,9 @@ class NetworkManger : NetworkMangerProtocol{
                     
                 }
         }
+}
+
+struct  ApiResponse<T : Decodable> : Decodable{
+    let success:Int?
+    let result : [T]
 }

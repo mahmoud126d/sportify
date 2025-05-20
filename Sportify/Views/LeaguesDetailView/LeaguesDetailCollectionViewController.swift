@@ -30,6 +30,10 @@ class LeaguesDetailCollectionViewController: UICollectionViewController , UIColl
         setUpLayout()
         setUpNavigationIcon()
         setUpPresenter()
+        leagueDetailsPresenter?.fetchLeagues()
+        
+        
+        
     }
     
     private func setUpCells(){
@@ -97,7 +101,7 @@ class LeaguesDetailCollectionViewController: UICollectionViewController , UIColl
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "latestEventCell", for: indexPath) as! LatestEventCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "upcomingCell", for: indexPath) as! UpcomingEventCollectionViewCell
             let upcommingEvent = leagueDetailsPresenter?.upcommingEvents[indexPath.row]
             
             setUpCommingEventsCell(upcommingEvent: upcommingEvent,cell: cell)
@@ -125,7 +129,7 @@ class LeaguesDetailCollectionViewController: UICollectionViewController , UIColl
             return cell
         }
     }
-    private func setUpCommingEventsCell(upcommingEvent:FixtureDto?,cell:LatestEventCollectionViewCell){
+    private func setUpCommingEventsCell(upcommingEvent:FixtureDto?,cell:UpcomingEventCollectionViewCell){
         cell.homeTeamLabel.text = upcommingEvent?.eventHomeTeam
         cell.awayTeamLabel.text = upcommingEvent?.eventAwayTeam
         cell.dateLabel.text = upcommingEvent?.eventDate
