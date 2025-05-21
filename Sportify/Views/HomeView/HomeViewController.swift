@@ -11,10 +11,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @IBOutlet weak var sportsCollectionView: UICollectionView!
     private let sports = ["Football","Tennis","Cricket",
-    "BasketBall"]
+    "Basketball"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Setup UI elements, connect outlets, and add actions here
         let sportCellNib = UINib(nibName: "SportViewCell", bundle: nil)
         sportsCollectionView.register(sportCellNib, forCellWithReuseIdentifier: "sportCell")
         
