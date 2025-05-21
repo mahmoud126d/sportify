@@ -73,8 +73,12 @@ class LeaguesDetailCollectionViewController: UICollectionViewController , UIColl
             print(currentLeague)
         }
         
+        
         leagueDetailsPresenter?.fetchEvents(sport: self.sport ?? "football", leagueId: leagueId ?? 152)
-        leagueDetailsPresenter?.fetchTeams(sport: sport ?? "football", leagueId: leagueId ?? 255)
+        
+        if sport != "tennis"{
+            leagueDetailsPresenter?.fetchTeams(sport: sport ?? "football", leagueId: leagueId ?? 255)
+        }
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -126,18 +130,18 @@ class LeaguesDetailCollectionViewController: UICollectionViewController , UIColl
         }
     }
     private func setUpCommingEventsCell(upcommingEvent:FixtureDto?,cell:UpcomingEventCollectionViewCell){
-        cell.homeTeamLabel.text = upcommingEvent?.eventHomeTeam
-        cell.awayTeamLabel.text = upcommingEvent?.eventAwayTeam
+        cell.homeTeamLabel.text = upcommingEvent?.eventHome
+        cell.awayTeamLabel.text = upcommingEvent?.eventAway
         cell.dateLabel.text = upcommingEvent?.eventDate
         cell.timeLabel.text = upcommingEvent?.eventTime
         
-        if let imageUrl = upcommingEvent?.homeTeamLogo {
+        if let imageUrl = upcommingEvent?.homeLogo {
             cell.homeTeamImage.sd_setImage(with: URL(string: imageUrl), placeholderImage: UIImage(named: "placeholder.png"))
         }else{
             cell.homeTeamImage.image = UIImage(named: "placeholder.png")
         }
         
-        if let imageUrl = upcommingEvent?.awayTeamLogo {
+        if let imageUrl = upcommingEvent?.awayLogo {
             cell.awayTeamImage.sd_setImage(with: URL(string: imageUrl), placeholderImage: UIImage(named: "placeholder.png"))
         }else{
             cell.homeTeamImage.image = UIImage(named: "placeholder.png")
@@ -145,17 +149,17 @@ class LeaguesDetailCollectionViewController: UICollectionViewController , UIColl
     }
     
     private func setLatestEventsCell(latestEvent:FixtureDto?,cell:LatestEventCollectionViewCell){
-        cell.homeTeamLabel.text = latestEvent?.eventHomeTeam
-        cell.awayTeamLabel.text = latestEvent?.eventAwayTeam
+        cell.homeTeamLabel.text = latestEvent?.eventHome
+        cell.awayTeamLabel.text = latestEvent?.eventAway
         cell.dateLabel.text = latestEvent?.eventDate
         cell.timeLabel.text = latestEvent?.eventTime
         cell.scoreLabel.text = latestEvent?.eventFinalResult
-        if let imageUrl = latestEvent?.homeTeamLogo {
+        if let imageUrl = latestEvent?.homeLogo {
             cell.homeTeamImage.sd_setImage(with: URL(string: imageUrl), placeholderImage: UIImage(named: "placeholder.png"))
         }else{
             cell.homeTeamImage.image = UIImage(named: "placeholder.png")
         }
-        if let imageUrl = latestEvent?.awayTeamLogo {
+        if let imageUrl = latestEvent?.awayLogo {
             cell.awayTeamImage.sd_setImage(with: URL(string: imageUrl), placeholderImage: UIImage(named: "placeholder.png"))
         }else{
             cell.homeTeamImage.image = UIImage(named: "placeholder.png")

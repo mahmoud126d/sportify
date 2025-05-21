@@ -56,6 +56,7 @@ class LeaguesTableViewController: UITableViewController , LeaguesViewProtocol{
         let leagueDetailVc = LeaguesDetailCollectionViewController()
         leagueDetailVc.leagueId = leaguesPresenter?.leageus[indexPath.row].leagueKey
         leagueDetailVc.leagueName = leaguesPresenter?.leageus[indexPath.row].leagueName ?? "No name"
+        print("name = \(leaguesPresenter?.leageus[indexPath.row].leagueName)")
         leagueDetailVc.leagueImage = leaguesPresenter?.leageus[indexPath.row].leagueLogo ?? "star"
         leagueDetailVc.sport = sport
         navigationController?.pushViewController(leagueDetailVc, animated: true)

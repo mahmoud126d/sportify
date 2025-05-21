@@ -51,7 +51,12 @@ class TeamDetailsPresenter {
     
     func fetchTeamDetails(sport: String, teamId: Int) {
         let requestType = ApiCallType.teamsDetails.rawValue
-        networkManager.fetchData(sport: sport, requestType: requestType, leagueId: teamId) { (result: Result<[TeamDetailDto], Error>) in
+        networkManager.fetchData(
+            sport: sport,
+            requestType: requestType,
+            leagueId: teamId
+        
+        ) { (result: Result<[TeamDetailDto], Error>) in
             switch result {
             case .success(let teamDetails):
                 self._teamDetails = teamDetails
