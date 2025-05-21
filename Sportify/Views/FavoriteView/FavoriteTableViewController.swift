@@ -11,6 +11,7 @@ import Reachability
 class FavoriteTableViewController: UITableViewController , FavoritesViewProtocol{
     private var presenter: FavoritesPresenter!
 
+    @IBOutlet weak var titleLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -22,6 +23,7 @@ class FavoriteTableViewController: UITableViewController , FavoritesViewProtocol
         presenter.fetchFavoriteLeagues()
     }
     private func setupTableView() {
+        titleLabel.text = "Favorites"
         let leagueTableCellnib = UINib(nibName: "LeaguesTableViewCell", bundle: nil)
         tableView.register(leagueTableCellnib, forCellReuseIdentifier: "leagueCell")
     }
@@ -29,9 +31,9 @@ class FavoriteTableViewController: UITableViewController , FavoritesViewProtocol
         presenter = FavoritesPresenter(favoritesView: self)
     }
     // MARK: - Table view data source
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        return 1
+//    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.favoriteLeagues.count
     }
@@ -43,9 +45,9 @@ class FavoriteTableViewController: UITableViewController , FavoritesViewProtocol
         cell.leagueNameLabel.text = league.leagueName.isEmpty ? "League \(league.leagueId)" : league.leagueName
           
         if let logoUrlString = league.leagueLogo, !logoUrlString.isEmpty, let logoUrl = URL(string: logoUrlString) {
-            cell.leagueImage.sd_setImage(with: logoUrl, placeholderImage: UIImage(systemName: "star"))
+            cell.leagueImage.sd_setImage(with: logoUrl, placeholderImage: UIImage(systemName: "heart.fill")?.withTintColor(.red))
         } else {
-            cell.leagueImage.image = UIImage(systemName: "star")
+            cell.leagueImage.image = UIImage(systemName: "heart.fill")
         }
         return cell
       }

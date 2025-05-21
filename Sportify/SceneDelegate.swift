@@ -8,41 +8,43 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    
     var window: UIWindow?
-
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         guard let windowScene = (scene as? UIWindowScene) else {
             return
         }
-
-        
-        let homeIcon = UIImage(systemName: "house")
-        let fvIcon = UIImage(systemName: "heart.fill")
-        
-        let tabBarController = UITabBarController()
-        let tab1 = HomeViewController(nibName: "HomeViewController", bundle: nil)
-        
-        let tab2 = FavoriteTableViewController(nibName: "FavoriteTableViewController", bundle: nil)
-        
-        tab1.tabBarItem = UITabBarItem(title: "Home", image: homeIcon, tag: 1)
-        tab2.tabBarItem = UITabBarItem(title: "Favourite", image: fvIcon, tag: 2)
-        
-        let controllers = [tab1, tab2]
-        tabBarController.tabBar.tintColor = .black
-        tabBarController.tabBar.unselectedItemTintColor = .lightGray
-        tabBarController.viewControllers = controllers
-        
         window = UIWindow(windowScene: windowScene)
 
-        let navController = UINavigationController(rootViewController: tabBarController)
+        let splashVC = SplashViewController(nibName: "SplashViewController", bundle: nil)
+        window?.rootViewController = splashVC
+        window?.makeKeyAndVisible()
         
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.showMainApp()
+        }
+    }
+    private func showMainApp() {
+
+        let tabBarController = UITabBarController()
+
+        let homeVC = HomeViewController(nibName: "HomeViewController", bundle: nil)
+        let favoriteVC = FavoriteTableViewController(nibName: "FavoriteTableViewController", bundle: nil)
+        
+        homeVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 0)
+        favoriteVC.tabBarItem = UITabBarItem(title: "Favourite", image: UIImage(systemName: "heart.fill"), tag: 1)
+
+        tabBarController.viewControllers = [homeVC, favoriteVC]
+        tabBarController.tabBar.tintColor = .label
+        tabBarController.tabBar.unselectedItemTintColor = .lightGray
+
+        let navController = UINavigationController(rootViewController: tabBarController)
+        navController.navigationBar.tintColor = .label
+        navController.navigationBar.barTintColor = .systemBackground
 
         window?.rootViewController = navController
-        window?.makeKeyAndVisible()
-        navController.navigationBar.tintColor = .black
-        navController.navigationBar.barTintColor = .white
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

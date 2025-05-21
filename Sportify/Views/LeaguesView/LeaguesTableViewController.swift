@@ -15,7 +15,7 @@ class LeaguesTableViewController: UITableViewController , LeaguesViewProtocol{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = "Leagues"
         let leagueTableCellnib = UINib(nibName: "LeaguesTableViewCell", bundle: nil)
         tableView.register(leagueTableCellnib, forCellReuseIdentifier: "leagueCell")
         self.tableView.dataSource = self
@@ -29,10 +29,10 @@ class LeaguesTableViewController: UITableViewController , LeaguesViewProtocol{
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 1
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows

@@ -40,8 +40,11 @@ class LeaguesDetailCollectionViewController: UICollectionViewController , UIColl
         collectionView.register(latestEventCellnib, forCellWithReuseIdentifier: "latestEventCell")
         let teamCellnib = UINib(nibName: "TeamsCollectionViewCell", bundle: nil)
         collectionView.register(teamCellnib, forCellWithReuseIdentifier: "teamsCell")
+        let headerNib = UINib(nibName: "SectionHeaderView", bundle: nil)
+        collectionView.register(headerNib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "SectionHeaderView")
     }
     private func setUpLayout(){
+        self.title = leagueName
         let layout = UICollectionViewCompositionalLayout { sectionIndex, environment in
             if sectionIndex == 0 {
                 return self.upcomingEventsSection()
@@ -175,7 +178,14 @@ class LeaguesDetailCollectionViewController: UICollectionViewController , UIColl
         group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 32)
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
-        section.contentInsets = .init(top: 50, leading: 16, bottom: 16, trailing: 0)
+        section.contentInsets = .init(top: 10, leading: 16, bottom: 16, trailing: 16)
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                                    heightDimension: .absolute(40))
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+                layoutSize: headerSize,
+                elementKind: UICollectionView.elementKindSectionHeader,
+                alignment: .topLeading)
+            section.boundarySupplementaryItems = [sectionHeader]
         return section
     }
     func latestEventSection() -> NSCollectionLayoutSection {
@@ -185,19 +195,32 @@ class LeaguesDetailCollectionViewController: UICollectionViewController , UIColl
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = .init(top: 50, leading: 16, bottom: 16, trailing: 16)
+        section.contentInsets = .init(top: 10, leading: 16, bottom: 16, trailing: 16)
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                                    heightDimension: .absolute(40))
+            let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+                layoutSize: headerSize,
+                elementKind: UICollectionView.elementKindSectionHeader,
+                alignment: .top)
+            section.boundarySupplementaryItems = [sectionHeader]
         return section
     }
     func teamsSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(153), heightDimension: .absolute(120))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(153), heightDimension: .absolute(140))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 10)
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
-        section.contentInsets = .init(top: 20, leading: 16, bottom: 16, trailing: 0)
-        
+        section.contentInsets = .init(top: 10, leading: 16, bottom: 16, trailing: 0)
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                                    heightDimension: .absolute(40))
+            let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+                layoutSize: headerSize,
+                elementKind: UICollectionView.elementKindSectionHeader,
+                alignment: .top)
+            section.boundarySupplementaryItems = [sectionHeader]
         return section
     }
     
@@ -248,4 +271,29 @@ class LeaguesDetailCollectionViewController: UICollectionViewController , UIColl
     func displayTeams(teams: [TeamDto]) {
         collectionView.reloadData()
     }
+    override func collectionView(_ collectionView: UICollectionView,
+                                 viewForSupplementaryElementOfKind kind: String,
+                                 at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionHeader {
+            let header = collectionView.dequeueReusableSupplementaryView(
+                ofKind: kind,
+                withReuseIdentifier: "SectionHeaderView",
+                for: indexPath) as! SectionHeaderView
+            
+            switch indexPath.section {
+            case 0:
+                header.titleLabel.text = "Upcoming Events"
+            case 1:
+                header.titleLabel.text = "Latest Events"
+            case 2:
+                header.titleLabel.text = "Teams"
+            default:
+                header.titleLabel.text = ""
+            }
+            
+            return header
+        }
+        return UICollectionReusableView()
+    }
+
 }

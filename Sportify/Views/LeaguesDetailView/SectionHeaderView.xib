@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SectionHeaderView" id="U6b-Vx-4bR" customClass="SectionHeaderView" customModule="Sportify" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnu-T5-QPq">
+                    <rect key="frame" x="0.0" y="42" width="320" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="aP2-Ng-kfn"/>
+                        <constraint firstAttribute="width" constant="320" id="swr-6A-3sJ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                    <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="highlightedColor" name="Vs"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <constraints>
+                <constraint firstItem="bnu-T5-QPq" firstAttribute="centerY" secondItem="VXr-Tz-HHm" secondAttribute="centerY" id="8Co-TH-AJH"/>
+                <constraint firstItem="bnu-T5-QPq" firstAttribute="centerX" secondItem="VXr-Tz-HHm" secondAttribute="centerX" id="LRa-kN-sER"/>
+                <constraint firstItem="bnu-T5-QPq" firstAttribute="trailing" secondItem="VXr-Tz-HHm" secondAttribute="trailing" id="e0l-UN-VKz"/>
+                <constraint firstItem="bnu-T5-QPq" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="pIU-H5-Vj2"/>
+            </constraints>
+            <connections>
+                <outlet property="titleLabel" destination="bnu-T5-QPq" id="ChW-1b-Zud"/>
+            </connections>
+            <point key="canvasLocation" x="-3.0534351145038165" y="19.718309859154932"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <namedColor name="Vs">
+            <color red="0.21551579236984253" green="0.66973906755447388" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
