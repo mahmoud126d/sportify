@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Lottie
 
 class LeaguesDetailCollectionViewController: UICollectionViewController , UICollectionViewDelegateFlowLayout,LeaguesDetailsViewProtocol {
     
@@ -14,6 +14,8 @@ class LeaguesDetailCollectionViewController: UICollectionViewController , UIColl
     var sport , leagueName , leagueImage :String?
     var leagueId:Int?
     private var favoriteButton: UIBarButtonItem!
+    private var animationView: LottieAnimationView?
+    
     init() {
         let layout = UICollectionViewFlowLayout()
         super.init(collectionViewLayout: layout)
@@ -30,7 +32,7 @@ class LeaguesDetailCollectionViewController: UICollectionViewController , UIColl
         setUpLayout()
         setUpNavigationIcon()
         setUpPresenter()
-
+        displayAnimation()
     }
     
     private func setUpCells(){
@@ -259,16 +261,17 @@ class LeaguesDetailCollectionViewController: UICollectionViewController , UIColl
             }
         }
 
-    func displayUpcommingEvents(upcommingEvents: [FixtureDto]) {
-        
+    func displayUpcommingEvents() {
+        hideAnimation()
         collectionView.reloadData()
     }
     
-    func displayLatestEvents(latestEvents: [FixtureDto]) {
-              
+    func displayLatestEvents() {
+        hideAnimation()
         collectionView.reloadData()
     }
-    func displayTeams(teams: [TeamDto]) {
+    func displayTeams() {
+        hideAnimation()
         collectionView.reloadData()
     }
     override func collectionView(_ collectionView: UICollectionView,
@@ -296,4 +299,19 @@ class LeaguesDetailCollectionViewController: UICollectionViewController , UIColl
         return UICollectionReusableView()
     }
 
+    private func displayAnimation(){
+        animationView = LottieAnimationView(name: "animation")
+
+               guard let animationView = animationView else { return }
+               animationView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+               animationView.center = view.center
+               animationView.contentMode = .scaleAspectFit
+               animationView.loopMode = .loop
+               animationView.play()
+
+               view.addSubview(animationView)
+    }
+    private func hideAnimation(){
+        animationView?.removeFromSuperview()
+    }
 }

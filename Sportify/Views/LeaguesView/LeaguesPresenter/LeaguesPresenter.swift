@@ -19,9 +19,13 @@ class LeaguesPresenter{
         }
     }
     
-     var leageus:[LeagueDto] {
-        get{
-            return _leagues
+    var leageus: [LeagueDto] {
+        get {
+            if _leagues.count > 6 {
+                return Array(_leagues.dropFirst(6))
+            } else {
+                return []
+            }
         }
     }
     

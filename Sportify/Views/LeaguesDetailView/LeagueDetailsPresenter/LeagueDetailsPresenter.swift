@@ -16,7 +16,7 @@ class LeagueDetailsPresenter{
     
     private var _upcommingEvents : [FixtureDto] = [] {
         didSet{
-            leagueDetailsView.displayUpcommingEvents(upcommingEvents: upcommingEvents)
+            leagueDetailsView.displayUpcommingEvents()
         }
     }
     
@@ -28,7 +28,7 @@ class LeagueDetailsPresenter{
     
     private var _latestEvents : [FixtureDto] = [] {
         didSet{
-            leagueDetailsView.displayLatestEvents(latestEvents: latestEvents)
+            leagueDetailsView.displayLatestEvents()
         }
     }
     
@@ -40,7 +40,7 @@ class LeagueDetailsPresenter{
     
     private var _teams : [TeamDto] = [] {
         didSet{
-            leagueDetailsView.displayTeams(teams: teams)
+            leagueDetailsView.displayTeams()
         }
     }
     

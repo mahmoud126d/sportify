@@ -9,9 +9,9 @@ import Foundation
 
 protocol LeaguesDetailsViewProtocol{
     
-    func displayUpcommingEvents(upcommingEvents:[FixtureDto])
-    func displayLatestEvents(latestEvents:[FixtureDto])
-    func displayTeams(teams:[TeamDto])
+    func displayUpcommingEvents()
+    func displayLatestEvents()
+    func displayTeams()
     
     func updateFavoriteStatus(isFavorite: Bool)
     func showError(_ message: String)

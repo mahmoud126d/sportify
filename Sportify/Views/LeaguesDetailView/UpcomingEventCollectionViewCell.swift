@@ -21,6 +21,7 @@ class UpcomingEventCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var awayTeamLabel: UILabel!
     
+    @IBOutlet weak var noeventsLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

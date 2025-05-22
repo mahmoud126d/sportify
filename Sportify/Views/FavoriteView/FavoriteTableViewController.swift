@@ -63,7 +63,7 @@ class FavoriteTableViewController: UITableViewController , FavoritesViewProtocol
     }
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            presenter.removeLeagueFromFavorites(at: indexPath.row)
+            showDeleteConfirmation(index: indexPath.row)
         }
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -88,4 +88,22 @@ class FavoriteTableViewController: UITableViewController , FavoritesViewProtocol
         let reachability = try? Reachability()
         return reachability?.connection != .unavailable
     }
+    func showDeleteConfirmation(index:Int) {
+            let alert = UIAlertController(
+                title: "Delete Item",
+                message: "Are you sure you want to delete this item?",
+                preferredStyle: .alert
+            )
+
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+
+            let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
+                self.presenter.removeLeagueFromFavorites(at: index)
+            }
+
+            alert.addAction(cancelAction)
+            alert.addAction(deleteAction)
+
+            present(alert, animated: true, completion: nil)
+        }
 }
