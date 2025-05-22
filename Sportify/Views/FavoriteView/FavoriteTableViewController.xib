@@ -24,6 +24,7 @@
             <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IcR-iO-Ylt">
                 <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <accessibility key="accessibilityConfiguration" identifier="favorite"/>
                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                 <nil key="textColor"/>
                 <nil key="highlightedColor"/>

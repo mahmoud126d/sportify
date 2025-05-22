@@ -33,8 +33,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let homeVC = HomeViewController(nibName: "HomeViewController", bundle: nil)
         let favoriteVC = FavoriteTableViewController(nibName: "FavoriteTableViewController", bundle: nil)
         
-        homeVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 0)
-        favoriteVC.tabBarItem = UITabBarItem(title: "Favourite", image: UIImage(systemName: "heart.fill"), tag: 1)
+        homeVC.tabBarItem = UITabBarItem(    title: NSLocalizedString("home_title", comment: "Title for Home tab"), image: UIImage(systemName: "house"), tag: 0)
+        favoriteVC.tabBarItem = UITabBarItem(    title: NSLocalizedString("favorite_title", comment: "Title for Favorite tab"), image: UIImage(systemName: "heart.fill"), tag: 1)
 
         tabBarController.viewControllers = [homeVC, favoriteVC]
         tabBarController.tabBar.tintColor = .label

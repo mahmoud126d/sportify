@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  Sportify
+
+  Created by Aya Emam on 23/05/2025.
+  
+*/
+"Football" = "Football";
+"Tennis" = "Tennis";
+"Cricket" = "Cricket";
+"Basketball" = "Basketball";
+"section_coach" = "Coach";
+"section_players" = "Players";
+"leagues_title" = "Leagues";
+"favorites_title" = "Favorites";
+"upcoming_events" = "Upcoming Events";
+"latest_events" = "Latest Events";
+"teams" = "Teams";
+"home_title" = "Home";
+"favorite_title" = "Favourite";
+"sports_label" = "Sports";
+
