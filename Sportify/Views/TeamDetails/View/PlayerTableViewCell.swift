@@ -17,12 +17,12 @@ class PlayerTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//        setupUI()
+        setupUI()
     }
 
-//    private func setupUI() {
-//        playerImage.layer.cornerRadius = playerImage.frame.width / 2
-//        playerImage.clipsToBounds = true
-//    }
+    private func setupUI() {
+        playerImage.layer.cornerRadius = playerImage.frame.width / 2
+        playerImage.clipsToBounds = true
+    }
     
 }

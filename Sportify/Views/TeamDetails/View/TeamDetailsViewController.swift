@@ -34,7 +34,8 @@ class TeamDetailsViewController: UIViewController, TeamDetailsViewProtocol {
     private func setupTableView() {
         let playerCellNib = UINib(nibName: "PlayerTableViewCell", bundle: nil)
         playersTable.register(playerCellNib, forCellReuseIdentifier: "playerCell")
-        
+        let coachCellNib = UINib(nibName: "CoachTableViewCell", bundle: nil)
+        playersTable.register(coachCellNib, forCellReuseIdentifier: "coachCell")
         playersTable.delegate = self
         playersTable.dataSource = self
         
@@ -97,17 +98,18 @@ extension TeamDetailsViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell", for: indexPath) as? PlayerTableViewCell else {
-            return UITableViewCell()
-        }
-        
         switch indexPath.section {
         case 0:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "coachCell", for: indexPath) as? CoachTableViewCell else {
+                return UITableViewCell()
+            }
             let coach = teamDetailsPresenter?.coaches[indexPath.row]
-            cell.playerName.text = coach?.coachName
-            cell.playerRole.text = coach?.coachCountry
-            cell.playerImage.image = UIImage(systemName: "person.circle")
+            cell.coachNameLabel.text = coach?.coachName
+            return cell
         case 1:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell", for: indexPath) as? PlayerTableViewCell else {
+                return UITableViewCell()
+            }
             let player = teamDetailsPresenter?.players[indexPath.row]
             cell.playerName.text = player?.playerName
             cell.playerRole.text = player?.playerType ?? "Player"
@@ -116,20 +118,21 @@ extension TeamDetailsViewController: UITableViewDataSource, UITableViewDelegate 
             }else{
                 cell.playerImage.image = UIImage(systemName: "person.circle")
             }
+            return cell
         default:
-            break
+            return UITableViewCell()
         }
-        
-        return cell
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         switch section {
         case 0:
-            return "Coaches"
+//            return "Coach"
+            return NSLocalizedString("section_coach", comment: "Section title for coach")
         case 1:
-            return "Players"
+//            return "Players"
+            return NSLocalizedString("section_players", comment: "Section title for players")
         default:
             return nil
         }

@@ -23,7 +23,8 @@ class FavoriteTableViewController: UITableViewController , FavoritesViewProtocol
         presenter.fetchFavoriteLeagues()
     }
     private func setupTableView() {
-        titleLabel.text = "Favorites"
+//        titleLabel.text = "Favorites"
+        titleLabel.text = NSLocalizedString("favorites_title", comment: "Title for the favorites screen")
         let leagueTableCellnib = UINib(nibName: "LeaguesTableViewCell", bundle: nil)
         tableView.register(leagueTableCellnib, forCellReuseIdentifier: "leagueCell")
     }

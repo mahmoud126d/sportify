@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  Sportify
+
+  Created by Aya Emam on 23/05/2025.
+  
+*/
+"Football" = "كرة القدم";
+"Tennis" = "كرة التنس";
+"Cricket" = "الكريكيت";
+"Basketball" = "كرة السلة";
+"section_coach" = "المدرب";
+"section_players" = "اللاعبون";
+"leagues_title" = "الدوريات";
+"favorites_title" = "المفضلة";
+"upcoming_events" = "المباريات القادمة";
+"latest_events" = "أحدث المباريات";
+"teams" = "الفرق";
+"home_title" = "الرئيسية";
+"favorite_title" = "المفضلة";
+"sports_label" = "رياضة";
