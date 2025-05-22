@@ -285,11 +285,11 @@ class LeaguesDetailCollectionViewController: UICollectionViewController , UIColl
             
             switch indexPath.section {
             case 0:
-                header.titleLabel.text = "Upcoming Events"
+                header.titleLabel.text = NSLocalizedString("upcoming_events", comment: "Section header for upcoming events")
             case 1:
-                header.titleLabel.text = "Latest Events"
+                header.titleLabel.text = NSLocalizedString("latest_events", comment: "Section header for latest events")
             case 2:
-                header.titleLabel.text = "Teams"
+                header.titleLabel.text = NSLocalizedString("teams", comment: "Section header for teams")
             default:
                 header.titleLabel.text = ""
             }

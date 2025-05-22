@@ -9,11 +9,13 @@ import UIKit
 
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet weak var sportsLabel: UILabel!
     @IBOutlet weak var sportsCollectionView: UICollectionView!
     private let sports = ["Football","Tennis","Cricket",
     "Basketball"]
     override func viewDidLoad() {
         super.viewDidLoad()
+        sportsLabel.text = NSLocalizedString("sports_label", comment: "Label for sports section")
         let sportCellNib = UINib(nibName: "SportViewCell", bundle: nil)
         sportsCollectionView.register(sportCellNib, forCellWithReuseIdentifier: "sportCell")
         
@@ -44,7 +46,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "sportCell", for: indexPath) as! SportViewCell
         
-        cell.sportLabel.text = sports[indexPath.row]
+//        cell.sportLabel.text = sports[indexPath.row]
+        let key = sports[indexPath.row]
+        cell.sportLabel.text = NSLocalizedString(key, comment: "Sport name")
         cell.sportImageView.image = UIImage(named: sports[indexPath.row].lowercased())
 
         return cell

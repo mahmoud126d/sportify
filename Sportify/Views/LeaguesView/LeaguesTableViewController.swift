@@ -15,7 +15,8 @@ class LeaguesTableViewController: UITableViewController , LeaguesViewProtocol{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Leagues"
+//        self.title = "Leagues"
+        self.title = NSLocalizedString("leagues_title", comment: "Title for leagues screen")
         let leagueTableCellnib = UINib(nibName: "LeaguesTableViewCell", bundle: nil)
         tableView.register(leagueTableCellnib, forCellReuseIdentifier: "leagueCell")
         self.tableView.dataSource = self
