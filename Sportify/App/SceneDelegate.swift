@@ -23,10 +23,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.showMainApp()
+            self.decideInitialScreen()
         }
     }
-    private func showMainApp() {
+    private func decideInitialScreen() {
+            let hasSeenOnboarding = UserDefaults.standard.bool(forKey: "Onboarding")
+
+            if hasSeenOnboarding {
+                showMainApp()
+            } else {
+                showOnboarding()
+            }
+        }
+
+     func showMainApp() {
 
         let tabBarController = UITabBarController()
 
@@ -46,7 +56,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window?.rootViewController = navController
     }
-
+    func showOnboarding() {
+            let onboardingVC = OnboardingPageViewController(
+                transitionStyle: .scroll,
+                navigationOrientation: .horizontal
+            )
+            window?.rootViewController = onboardingVC
+        }
     func sceneDidDisconnect(_ scene: UIScene) {
         
         

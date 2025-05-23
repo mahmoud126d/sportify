@@ -71,6 +71,9 @@
 		C29664FD2DDFD8DE006A7C2D /* CoachTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29664FB2DDFD8DE006A7C2D /* CoachTableViewCell.swift */; };
 		C29664FE2DDFD8DE006A7C2D /* CoachTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29664FC2DDFD8DE006A7C2D /* CoachTableViewCell.xib */; };
 		C29665012DDFE2EF006A7C2D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C29664FF2DDFE2EF006A7C2D /* Localizable.strings */; };
+		C296650E2DE0031A006A7C2D /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C296650D2DE0031A006A7C2D /* OnboardingPageViewController.swift */; };
+		C29665112DE00344006A7C2D /* OnboardingContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29665102DE00344006A7C2D /* OnboardingContentViewController.xib */; };
+		C29665122DE00344006A7C2D /* OnboardingContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C296650F2DE00344006A7C2D /* OnboardingContentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +159,9 @@
 		C29664FC2DDFD8DE006A7C2D /* CoachTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoachTableViewCell.xib; sourceTree = "<group>"; };
 		C29665002DDFE2EF006A7C2D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C29665022DDFE2F8006A7C2D /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C296650D2DE0031A006A7C2D /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
+		C296650F2DE00344006A7C2D /* OnboardingContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContentViewController.swift; sourceTree = "<group>"; };
+		C29665102DE00344006A7C2D /* OnboardingContentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingContentViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +251,9 @@
 			children = (
 				C2108BD02DDE25DF00047336 /* SplashViewController.swift */,
 				C2108BD12DDE25DF00047336 /* SplashViewController.xib */,
+				C296650D2DE0031A006A7C2D /* OnboardingPageViewController.swift */,
+				C296650F2DE00344006A7C2D /* OnboardingContentViewController.swift */,
+				C29665102DE00344006A7C2D /* OnboardingContentViewController.xib */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -616,6 +625,7 @@
 				C233C80A2DD668F900BE0C9A /* UpcomingEventCollectionViewCell.xib in Resources */,
 				22AFC17C2DD608B30060C450 /* PlayerTableViewCell.xib in Resources */,
 				C2108BD32DDE25DF00047336 /* SplashViewController.xib in Resources */,
+				C29665112DE00344006A7C2D /* OnboardingContentViewController.xib in Resources */,
 				C2108BCF2DDE249000047336 /* SectionHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -657,10 +667,12 @@
 				C29664FD2DDFD8DE006A7C2D /* CoachTableViewCell.swift in Sources */,
 				C23366232DD7CD30003DF2D9 /* TeamDetailsViewProtocol.swift in Sources */,
 				22AFC17B2DD608B30060C450 /* PlayerTableViewCell.swift in Sources */,
+				C29665122DE00344006A7C2D /* OnboardingContentViewController.swift in Sources */,
 				22335DCB2DD4D2B50076422C /* AppDelegate.swift in Sources */,
 				22491E392DDE046600AA873A /* TennisFixtureDto.swift in Sources */,
 				22335DCD2DD4D2B50076422C /* SceneDelegate.swift in Sources */,
 				22F7A78D2DD5011200A6B05A /* HomeViewController.swift in Sources */,
+				C296650E2DE0031A006A7C2D /* OnboardingPageViewController.swift in Sources */,
 				22F7A7972DD51A3100A6B05A /* SportViewCell.swift in Sources */,
 				222A41772DD75395007FDCCF /* LeagueDto.swift in Sources */,
 				222A41812DD75711007FDCCF /* LeaguesPresenter.swift in Sources */,

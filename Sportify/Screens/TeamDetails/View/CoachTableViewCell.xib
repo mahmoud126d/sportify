@@ -26,7 +26,7 @@
                 </subviews>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <color key="backgroundColor" name="CellBack"/>
+            <color key="backgroundColor" name="Circle"/>
             <constraints>
                 <constraint firstItem="4cS-MT-Mn8" firstAttribute="centerX" secondItem="njF-e1-oar" secondAttribute="centerX" id="6CT-C4-Ucc"/>
                 <constraint firstItem="njF-e1-oar" firstAttribute="trailing" secondItem="4cS-MT-Mn8" secondAttribute="trailing" constant="16" id="8Ve-b6-CeG"/>
@@ -40,8 +40,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <namedColor name="CellBack">
-            <color red="0.89800000190734863" green="0.89800000190734863" blue="0.9179999828338623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="Circle">
+            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
