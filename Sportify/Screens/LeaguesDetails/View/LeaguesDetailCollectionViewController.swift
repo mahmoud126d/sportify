@@ -181,6 +181,15 @@ class LeaguesDetailCollectionViewController: UICollectionViewController , UIColl
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
         section.contentInsets = .init(top: 10, leading: 16, bottom: 16, trailing: 16)
+        section.visibleItemsInvalidationHandler = { (items, offset, environment) in
+        items.forEach { item in
+        let distanceFromCenter = abs((item.frame.midX - offset.x) - environment.container.contentSize.width / 2.0)
+        let minScale: CGFloat = 0.8
+        let maxScale: CGFloat = 1.0
+        let scale = max(maxScale - (distanceFromCenter / environment.container.contentSize.width), minScale)
+        item.transform = CGAffineTransform(scaleX: scale, y: scale)
+        }
+        }
         let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                                     heightDimension: .absolute(40))
         let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
@@ -216,6 +225,15 @@ class LeaguesDetailCollectionViewController: UICollectionViewController , UIColl
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
         section.contentInsets = .init(top: 10, leading: 16, bottom: 16, trailing: 0)
+        section.visibleItemsInvalidationHandler = { (items, offset, environment) in
+        items.forEach { item in
+        let distanceFromCenter = abs((item.frame.midX - offset.x) - environment.container.contentSize.width / 2.0)
+        let minScale: CGFloat = 0.8
+        let maxScale: CGFloat = 1.0
+        let scale = max(maxScale - (distanceFromCenter / environment.container.contentSize.width), minScale)
+        item.transform = CGAffineTransform(scaleX: scale, y: scale)
+        }
+        }
         let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                                     heightDimension: .absolute(40))
             let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
