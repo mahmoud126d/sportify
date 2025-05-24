@@ -19,4 +19,7 @@
 "home_title" = "Home";
 "favorite_title" = "Favourite";
 "sports_label" = "Sports";
+"onboarding_page1_text" = "Welcome to Sportify    Explore different sports";
+"onboarding_page2_text" = "Enjoy your experience";
+"get_started" = "Get Started";
 

@@ -19,3 +19,6 @@
 "home_title" = "الرئيسية";
 "favorite_title" = "المفضلة";
 "sports_label" = "رياضة";
+"onboarding_page1_text" = "مرحبًا بك في Sportify    استكشف الرياضات المختلفة";
+"onboarding_page2_text" = "استمتع بتجربتك";
+"get_started" = "ابدأ";

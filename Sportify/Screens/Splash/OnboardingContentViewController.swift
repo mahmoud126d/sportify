@@ -18,6 +18,7 @@ class OnboardingContentViewController: UIViewController {
     var onGetStarted: (() -> Void)?
     override func viewDidLoad() {
         super.viewDidLoad()
+        startButton.setTitle(NSLocalizedString("get_started", comment: "text"), for: .normal)
 
         label.text = text
         image.image = imageToShow

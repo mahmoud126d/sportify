@@ -11,11 +11,13 @@ class OnboardingPageViewController: UIPageViewController , UIPageViewControllerD
 
     private lazy var pages: [OnboardingContentViewController] = {
         let page1 = OnboardingContentViewController(nibName: "OnboardingContentViewController", bundle: nil)
-        page1.text = "Welcome to Sportify    Explore different sports"
+        page1.text = NSLocalizedString("onboarding_page1_text", comment: "message")
+
         page1.imageToShow = UIImage(named: "onboarding2")
         page1.showGetStartedButton = false
         let page2 = OnboardingContentViewController(nibName: "OnboardingContentViewController", bundle: nil)
-        page2.text = "Enjoy your experience"
+        page2.text = NSLocalizedString("onboarding_page2_text", comment: "message")
+
         page2.imageToShow = UIImage(named: "onboarding3")
         page2.showGetStartedButton = true
         page2.onGetStarted = { [weak self] in
