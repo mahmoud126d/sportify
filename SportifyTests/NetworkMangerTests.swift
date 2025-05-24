@@ -10,6 +10,15 @@ import Alamofire
 
 class NetworkMangerTests: XCTestCase {
 
+    var mock:MockRequester?
+    override func setUpWithError() throws {
+        mock = MockRequester()
+    }
+
+    override func tearDownWithError() throws {
+        mock = nil
+    }
+    
     struct DummyResult: Decodable, Equatable {
         let title: String
     }
@@ -37,8 +46,8 @@ class NetworkMangerTests: XCTestCase {
     }
 
     func testFetchLeaguesSuccess() {
-        let mock = MockRequester()
-        let networkManager = NetworkManger(requester: mock)
+        
+        let networkManager = NetworkManger(requester: mock!)
 
         let expectation = self.expectation(description: "Fetch leagues")
 
@@ -54,8 +63,8 @@ class NetworkMangerTests: XCTestCase {
 
         waitForExpectations(timeout: 1)
 
-        XCTAssertEqual(mock.capturedURL, "https://apiv2.allsportsapi.com/football/")
-        XCTAssertEqual(mock.capturedParams?["met"] as? String, "Leagues")
+        XCTAssertEqual(mock?.capturedURL, "https://apiv2.allsportsapi.com/football/")
+        XCTAssertEqual(mock?.capturedParams?["met"] as? String, "Leagues")
     }
 
     func testFetchLeaguesFailure() {
@@ -84,7 +93,6 @@ class NetworkMangerTests: XCTestCase {
             sport: "football",
             requestType: "Leagues"
         ) { (result: Result<[LeagueDto], Error>) in
-            // mock your League model accordingly
             switch result {
             case .success(let leagues):
                 XCTAssertNotNil(leagues)
